@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for line in response %}
+{% if request.path == "/" %}
+{% if line.api.enabled %}
+<p><a href="{{ request.path }}{{ line.id }}">{{ line.name }}</a></p>
+{% else %}
+<p>{{ line.name }}</p>
+{% endif %}
+{% else %}
+<p><a href="{{ request.path }}/{{ line.id }}">{{ line.name }}</a></p>
+{% endif %}
+{% endfor %}
+{% endblock %}

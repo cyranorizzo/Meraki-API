@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<img src="{{ response.url }}" alt="Expiry: {{ response.expiry }}" width="500"></img>
+<br>
+<h1>Google Cloud Vision API:</h1>
+{% for label in labels %}
+<div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{ label.score*100 }}%" aria-valuenow="{{ label.score*100 }}" aria-valuemin="0" aria-valuemax="100">{{label.description}}</div>
+</div>
+<br>
+{% endfor %}
+{% endblock %}

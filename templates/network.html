@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<p>ID: {{ response.id }}</p>
+<p>Name: {{ response.name }}</p>
+<p>Organization ID: <a href="/{{response.organizationId}}">{{response.organizationId}}</a></p>
+<p>URL: <a href="{{ response.url }}">{{ response.url }}</a></p>
+<p>Timezone: {{ response.timeZone }}</p>
+<p>Enrollment: {{ response.enrollmentString }}</p>
+<p>Notes: {{ response.notes }}</p>
+<p>Tags:</p>
+{% for tag in response.tags %}
+<li>{{ tag }}</li>
+{% endfor %}
+<p>Product Types:</p>
+{% for type in response.productTypes %}
+<li><a href="{{ request.path }}/{{ type }}">{{ type }}</a></li>
+{% endfor %}
+{% endblock %}
