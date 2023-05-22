@@ -1,4 +1,5 @@
 # Instalation
+- git clone https://github.com/cyranorizzo/Meraki-API.git
 - python3 -m venv venv
 - source venv/bin/activate
 - pip install --upgrade pip
